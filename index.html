@@ -170,7 +170,7 @@
   <h1 class="cover-title">4.5 years, Kiki.<br><em>Still your chotu baby.</em><br><span style="font-size:0.6em;font-style:normal;letter-spacing:0.1em;color:#a08070;">Always will be.</span></h1>
   <p class="cover-date">December 1, 2021 — Today</p>
   <p class="cover-prompt">Have a look 🤍<br>I hope it takes you back to all these different eras of usss.</p>
-  <button class="start-btn" onclick="startExperience()">Open ✦</button>
+  <button class="start-btn" id="startBtn">Open ✦</button>
 </div>
 <div id="experience">
   <div class="progress-bar" id="progressBar"></div>
@@ -190,12 +190,12 @@
 </div>
 <script>
 const photos = [
-  { year: "Dec 2021", caption: "Even masks couldn't hide how happy we were to just be in the same room.", src: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSE[...]
-  { year: "Dec 2021", caption: "The beginning of being each other's shadow. Forever.", src: "data:image/png;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAA[...]
-  { year: "Dec 2021", caption: "3-4 hours every day like it still wasn't enough.", src: "data:image/png;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABA[...]
-  { year: "Dec 2021", caption: "Right before everything changed. You were shy. I was completely gone.", src: "data:image/png;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAA[...]
-  { year: "2022", caption: "Those eyes. They got me.", src: "data:image/png;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAACQKADAAQAA[...]
-  { year: "2022", caption: "Didn't think we'd end up here. But boy, was this trip fun.", src: "data:image/png;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAM[...]
+  { year: "Dec 2021", caption: "Even masks couldn't hide how happy we were to just be in the same room.", src: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsL[...]" },
+  { year: "Dec 2021", caption: "The beginning of being each other's shadow. Forever.", src: "data:image/png;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6AB[...]" },
+  { year: "Dec 2021", caption: "3-4 hours every day like it still wasn't enough.", src: "data:image/png;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMA[...]" },
+  { year: "Dec 2021", caption: "Right before everything changed. You were shy. I was completely gone.", src: "data:image/png;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAA[...]" },
+  { year: "2022", caption: "Those eyes. They got me.", src: "data:image/png;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAACQKAD[...]" },
+  { year: "2022", caption: "Didn't think we'd end up here. But boy, was this trip fun.", src: "data:image/png;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBMRXhpZgAATU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6[...]" }
 ];
 
 let currentCardIndex = 0;
@@ -269,6 +269,9 @@ function restart() {
   document.getElementById("cover").classList.remove("hidden");
   document.getElementById("experience").classList.remove("visible");
 }
+
+// Event listener for start button
+document.getElementById("startBtn").addEventListener("click", startExperience);
 
 updateNavButtons();
 </script>
